@@ -1,0 +1,49 @@
+#!/usr/bin/python3
+
+import sys
+import time
+from sys import argv
+
+def factorize(value):
+   '''takes number 
+    num: integer input 
+      '''
+    i = 2
+
+    if value < 2:
+        return
+    print()
+    print(value, "<- ")
+    while value % i:
+        i += 1
+    print("{:.0f}={:.0f}*{:.0f}".format(value, value / i, i))
+    print()
+    print(value, "<- ")
+
+if len(argv) != 2:
+    exit()
+
+try:
+    with open(argv[1]) as file:
+        line = file.readline()
+
+        while line != "":
+            value = int(line.split('\n')[0])
+            factorize(value)
+            line = file.readline()
+except FileNotFoundError:
+    print(f'File not found: {argv}')
+except ValueError:
+    print(f'Invalid input in the file: {argv}')
+except Exception as e:
+    print(f'An error occurred: {str(e)}')
+    pass
+start_time = time.time
+for line in lines:
+ value = int(line.strip())
+ factors = factorize(value)
+ if factors:
+   print(f"(value)={factors[0]*{factors[1]}")
+ if time.time() - start_time > 5:
+   print("time limit exceeded")
+   exit()

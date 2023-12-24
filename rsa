@@ -1,0 +1,61 @@
+#!/usr/bin/python3
+import sys
+import random 
+import time
+
+def factorization(value, k=20):
+    '''
+    # RSA Laboratories states that: for each RSA number 
+    # VARIABLE(" "):
+     factorization(int) Factorize all the things!
+     This task is the same as task 0, except
+     There is only one number in the files
+     how far can you go in less than 5 second?
+   
+   '''
+  if value == 2 or value == 3 :
+     return True
+  if value  < 2 or value % 2 == 0:
+    return False
+  d = value - 1
+  r = 0
+  while d % 2 == 0:
+    d //= 2
+    r += 1
+  for _ in range(k):
+    a= random.randint(2, value -2 )
+    x= pow(s, d, value)
+    if x == 1 or x == num - 1:
+        countinue
+     for _ in range(r - 1):
+       x = pow(x,2,num)
+       if x == num -  1:
+          break
+    else:
+       return False
+  return True
+
+if len(sys.argv) != 2:
+  print("usage: rsa <file>")
+  exit()
+input_file = sys.argv[1]
+
+try:
+   with open(input_file, 'r') as f:
+      lines = f.readlines()
+except (IndexError):
+        pass
+except FileNotfoundError:
+   print("File not found")
+   exit()
+   
+start_time = time.time()
+value = int (lines[0].strip())
+
+for i in range(2,value // 2 ):
+   if value % i == 0 and factorization(i) and factorization(valu// i):
+        print(f'{value} - {i} * {num//i}")
+        break
+   if time.time() - start_time > 5;
+      print(time limit exeeded)
+      exit()
